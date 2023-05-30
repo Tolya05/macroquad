@@ -40,6 +40,7 @@ pub enum TimerState {
     Finished,
 }
 
+#[derive(Debug, Clone, Copy)]
 pub struct Timer {
     duration: f32,
     elapsed: f32,
@@ -53,7 +54,7 @@ impl Timer {
             timer_state = TimerState::Running;
         }
         else {
-            timer_state = TimerState::Paused;
+            timer_state = TimerState::Paused
         }
         Self {
             duration,
