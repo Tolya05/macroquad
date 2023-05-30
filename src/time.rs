@@ -33,7 +33,7 @@ pub fn get_time() -> f64 {
     miniquad::date::now() - context.start_time
 }
 
-#[derive(PartialEq, Clone, Copy)]
+#[derive(PartialEq, Debug, Clone, Copy)]
 pub enum TimerState {
     Running,
     Paused,
