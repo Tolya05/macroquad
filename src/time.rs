@@ -47,11 +47,18 @@ pub struct Timer {
 }
 
 impl Timer {
-    pub fn new(duration: f32) -> Self {
+    pub fn new(duration: f32, start: bool) -> Self {
+        let timer_state: TimerState;
+        if start {
+            timer_state = TimerState::Running;
+        }
+        else {
+            timer_state = TimerState::Paused;
+        }
         Self {
             duration,
             elapsed: 0.0,
-            state: TimerState::Running,
+            state: timer_state,
         }
     }
 
